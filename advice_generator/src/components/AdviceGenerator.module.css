@@ -1,0 +1,26 @@
+.main {
+  background-color: #202632;
+  color: rgb(49, 214, 159);
+  padding: 15px;
+  margin: auto;
+  min-width: 260px;
+  width: 30vw;
+  border-radius: 15px;
+  position: relative;
+  font-size: 20px;
+}
+.dice {
+  background-color: rgb(49, 214, 159);
+  position: absolute;
+  margin-top: 2%;
+  left: 47%;
+  width: 6%;
+}
+#colorFont {
+  margin: 30px;
+  color: rgb(238, 238, 238);
+}
+.imgs {
+  display: flex;
+  flex-direction: column;
+}

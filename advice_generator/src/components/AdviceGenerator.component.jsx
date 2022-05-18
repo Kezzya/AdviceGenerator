@@ -6,13 +6,17 @@ export const AdviceGenerator = () => {
   // Примечание: пустой массив зависимостей [] означает, что
   // этот useEffect будет запущен один раз
   useEffect(() => {
+    newAdvice();
+  }, []);
+  const newAdvice = () => {
     fetch("https://api.adviceslip.com/advice")
       .then((response) => response.json())
       .then((result) => {
         setAdvice(result.slip.advice);
         setNumberAdvice(result.slip.id);
       });
-  }, []);
+  };
+
   return (
     <div className={styles.main}>
       <div>
@@ -25,7 +29,11 @@ export const AdviceGenerator = () => {
           style={{ width: `100%` }}
         />
       </div>
-      <img src="/images/icon-dice.svg" className={styles.dice} />
+      {/* <img src="/images/ellipse.svg" className={styles.dice} sizes="160px" /> */}
+      <div onClick={newAdvice}>
+        <img src="/images/icon-dice.svg" className={styles.dice} />
+        <img src="/images/icon-dice.svg" className={styles.backDice} />
+      </div>
     </div>
   );
 };
